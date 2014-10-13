@@ -7,10 +7,6 @@ existiese un index.html en el paquete static, se devolvería un archivo con
 las direcciones apara acceder a contenido JPA vía REST, es decir, aquellos repositorios 
 (interfaces) con anotación @RepositoryRestResource(collectionResourceRel = "*", path = "*")*/
 
-// Uploading files
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,15 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController; // incluye: import org.springframework.stereotype.Controller 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-// Uploading files
+// Building a RESTful Web Service with Spring Boot Actuator
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 // Consuming a RESTful Web Service
 import org.springframework.web.client.RestTemplate;
-
-// Uploading files
-import org.springframework.web.multipart.MultipartFile;
 
 // Building a RESTful Web Service
 import java.util.concurrent.atomic.AtomicLong;
@@ -134,48 +127,5 @@ public String rest() {
     }
     
     
-    /*
-    // Serving Web Content with Spring MVC
-    @RequestMapping("/hello")
-    public String hello(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
-        return "hello";
-    }
-    
-    
-    
-    
-    // Uploading files
-    @RequestMapping("/index")
-    public String index() {
-        return "index.html";
-    }
-    
-    // Uploading files
-     @RequestMapping(value="/upload", method=RequestMethod.GET)
-    public @ResponseBody String provideUploadInfo() {
-        return "You can upload a file by posting to this same URL.";
-    }
-    
-    // Uploading files
-    @RequestMapping(value="/upload", method=RequestMethod.POST)
-    public @ResponseBody String handleFileUpload(@RequestParam("name") String name, 
-            @RequestParam("file") MultipartFile file){
-        if (!file.isEmpty()) {
-            try {
-                byte[] bytes = file.getBytes();
-                BufferedOutputStream stream = 
-                        new BufferedOutputStream(new FileOutputStream(new File(name + "-uploaded")));
-                stream.write(bytes);
-                stream.close();
-                return "You successfully uploaded " + name + " into " + name + "-uploaded !";
-            } catch (Exception e) {
-                return "You failed to upload " + name + " => " + e.getMessage();
-            }
-        } else {
-            return "You failed to upload " + name + " because the file was empty.";
-        }
-    }
-    */
     
 }

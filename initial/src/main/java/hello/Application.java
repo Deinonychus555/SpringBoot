@@ -32,7 +32,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 
-@Configuration
+
+@Configuration // Esta clase puede tener @Bean
 @EnableAutoConfiguration //Spring Boot - JPA - MVC
 @ComponentScan
 // Accessing JPA Data with REST
@@ -40,15 +41,11 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 @Import(RepositoryRestMvcConfiguration.class)
 // end: Accessing JPA Data with REST
 
-// Uploading Files 
-
-
-
-// end: Uploading Files 
-
 public class Application {
     
-    /*
+    /* Nota: Los @Bean (configuraciones con 'factorías'), deben estar 
+    en una clase que tenga la anotación @Configuration */
+    
     // Uploading Files 
     @Bean
     public MultipartConfigElement multipartConfigElement() {
@@ -57,7 +54,7 @@ public class Application {
         factory.setMaxRequestSize("128KB");
         return factory.createMultipartConfig();
     }
-    */
+    
     public static void main(String[] args) {
         /*
         //si no queremos hacer nada:
