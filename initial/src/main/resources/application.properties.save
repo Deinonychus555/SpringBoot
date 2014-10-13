@@ -1,0 +1,5 @@
+info.app.name=MyService
+info.app.descriptione
+info.app.version=1.0.0
+
+endpoints.shutdown.enabled=true
