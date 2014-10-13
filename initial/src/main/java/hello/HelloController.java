@@ -1,6 +1,11 @@
 package hello;
 
-// NOTA: La anotación @RestController NO vale para mostrar vistas
+// NOTA: La anotación @RestController NO vale para mostrar vistas (*.html)
+
+/* NOTA: Si no existiese un controlador @RequestMapping("/") ni tampoco
+existiese un index.html en el paquete static, se devolvería un archivo con 
+las direcciones apara acceder a contenido JPA vía REST, es decir, aquellos repositorios 
+(interfaces) con anotación @RepositoryRestResource(collectionResourceRel = "*", path = "*")*/
 
 // Uploading files
 import java.io.BufferedOutputStream;
@@ -37,7 +42,7 @@ import java.util.Collection;
 
 
 
-@RestController // NO vale para mostrar vistas
+@RestController // NO devuelve vistas
 public class HelloController {
     
     // JPA

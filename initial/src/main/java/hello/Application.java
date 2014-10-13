@@ -1,6 +1,11 @@
 package hello;
 
-// NOTA: Las librerías deben estar en orden para que compilen o el orden influye
+// NOTA: Las librerías deben estar en orden para que compilen o almenos el orden influye
+
+/* NOTA: Si no existiese un controlador @RequestMapping("/") ni tampoco
+existiese un index.html en el paquete static, se devolvería un archivo con 
+las direcciones apara acceder a contenido JPA vía REST, es decir, aquellos repositorios 
+(interfaces) con anotación @RepositoryRestResource(collectionResourceRel = "*", path = "*")*/
 
 // Uploading Files 
 import javax.servlet.MultipartConfigElement;
