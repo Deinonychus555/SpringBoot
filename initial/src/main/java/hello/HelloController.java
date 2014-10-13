@@ -1,5 +1,7 @@
 package hello;
 
+// NOTA: La anotación @RestController NO vale para mostrar vistas
+
 // Uploading files
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -35,7 +37,7 @@ import java.util.Collection;
 
 
 
-@RestController
+@RestController // NO vale para mostrar vistas
 public class HelloController {
     
     // JPA
@@ -127,7 +129,7 @@ public String rest() {
     }
     
     
-    
+    /*
     // Serving Web Content with Spring MVC
     @RequestMapping("/hello")
     public String hello(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
@@ -137,7 +139,7 @@ public String rest() {
     
     
     
-    /*
+    
     // Uploading files
     @RequestMapping("/index")
     public String index() {
