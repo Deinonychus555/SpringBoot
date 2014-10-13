@@ -36,9 +36,10 @@ public class WebServerController {
     
     // Serving Web Content with Spring WebServerController
     @RequestMapping("/hello")
-    public String hello(@RequestParam(value="name", required=false, defaultValue="MVC") String name, Model model) {
-        model.addAttribute("name", name);
+    public String hello(@RequestParam(value="var", required=false, defaultValue="MVC") String var, Model model) {
+        model.addAttribute("var", var);
         return "hello";
+        // con 'name' como nombre de la variable, mostraba el nombre del proyecto
     }
     
     
