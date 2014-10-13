@@ -31,6 +31,7 @@ dependencies {
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")
     // end::actuator[]
+    
     testCompile("junit:junit")
 }
 
