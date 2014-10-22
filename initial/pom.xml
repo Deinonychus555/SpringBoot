@@ -66,6 +66,16 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <!-- end: thymeleaf -->
+        <!-- Validating Form Input -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-el</artifactId>
+		</dependency>
+        <!-- end: Validating Form Input -->
     </dependencies>
 
     <properties>
@@ -129,6 +139,7 @@
         <!-- Building a RESTful Web Service -->
         <!-- Building a RESTful Web Service with Spring Boot Actuator -->
         <!-- Uploading Files -->
+        <!-- Validating Form Input --> 
         <repository>
             <id>spring-releases</id>
             <name>Spring Releases</name>
@@ -143,6 +154,7 @@
             <name>Spring Releases</name>
             <url>http://repo.spring.io/libs-release</url>
         </pluginRepository>
+   <!-- end: Validating Form Input -->     
    <!-- end: Uploading Files -->
    <!-- end: Building a RESTful Web Service with Spring Boot Actuator -->
    <!-- end: Building a RESTful Web Service -->
