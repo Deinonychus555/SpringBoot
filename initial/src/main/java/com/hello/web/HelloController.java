@@ -1,4 +1,4 @@
-package hello;
+package com.hello.web;
 
 // NOTA: La anotación @RestController NO vale para mostrar vistas (*.html)
 
@@ -8,6 +8,12 @@ las direcciones apara acceder a contenido JPA vía REST, es decir, aquellos repo
 (interfaces) con anotación @RepositoryRestResource(collectionResourceRel = "*", path = "*")*/
 
 
+import com.hello.domain.Booking;
+import com.hello.domain.BookingRepository;
+import com.hello.domain.Customer;
+import com.hello.domain.CustomerRepository;
+import com.hello.Greeting;
+import com.hello.domain.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 
 // MVC

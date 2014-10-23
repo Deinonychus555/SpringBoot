@@ -7,8 +7,12 @@
     <artifactId>gs-spring-boot</artifactId>
     <version>0.1.0</version>
 
+    <!-- Inherit defaults from Spring Boot -->
     <parent>
         <groupId>org.springframework.boot</groupId>
+         <!-- The spring-boot-starter-parent is a special starter that provides useful Maven defaults. 
+             It also provides a dependency-management section so that you can omit version tags 
+             for blessed'' dependencies.  -->
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.1.8.RELEASE</version>
     </parent>
@@ -18,6 +22,7 @@
         <dependency>
             <!-- Spring Boot -->
             <groupId>org.springframework.boot</groupId>
+            <!-- Support for full-stack web development, including Tomcat and spring-webmvc -->
             <artifactId>spring-boot-starter-web</artifactId>
              <!-- end: Spring Boot -->
             <exclusions>
@@ -42,6 +47,8 @@
         <!-- Accessing JPA Data with REST-->
          <dependency>
             <groupId>org.springframework.boot</groupId>
+            <!-- Support for the `Java Persistence API'' including `spring-data-jpa, 
+                 spring-orm and Hibernate. -->
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
@@ -51,6 +58,7 @@
         <!-- end: Accessing Data with JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <!-- Support for exposing Spring Data repositories over REST via spring-data-rest-webmvc -->
             <artifactId>spring-boot-starter-data-rest</artifactId>
         </dependency>
         <!-- end: Accessing JPA Data with REST-->
@@ -63,6 +71,7 @@
         <!-- thymeleaf -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <!-- Support for the Thymeleaf templating engine, including integration with Spring -->
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <!-- end: thymeleaf -->
@@ -95,6 +104,7 @@
     <build>
         
         <plugins>
+            <!--  Maven plugin that can package the project as an executable jar -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

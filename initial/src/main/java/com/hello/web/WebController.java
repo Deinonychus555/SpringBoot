@@ -1,5 +1,6 @@
-package hello;
+package com.hello.web;
 
+import com.hello.domain.Person;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;

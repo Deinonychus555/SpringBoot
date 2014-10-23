@@ -1,4 +1,4 @@
-package hello;
+package com.hello.domain;
 
 
 //Consuming a RESTful Web Service

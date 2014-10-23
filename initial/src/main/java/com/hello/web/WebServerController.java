@@ -1,4 +1,4 @@
-package hello;
+package com.hello.web;
 
 // NOTA: La anotación @Controller es para mostrar vistas
 

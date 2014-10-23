@@ -1,4 +1,4 @@
-package hello;
+package com.hello;  // utilizar esta notación estandar
 
 // NOTA: Las librerías deben estar en orden para que compilen o almenos el orden influye
 
@@ -8,6 +8,8 @@ las direcciones apara acceder a contenido JPA vía REST, es decir, aquellos repo
 (interfaces) con anotación @RepositoryRestResource(collectionResourceRel = "*", path = "*")*/
 
 // Uploading Files 
+import com.hello.domain.Customer;
+import com.hello.domain.CustomerRepository;
 import javax.servlet.MultipartConfigElement;
 
 import java.util.List;
@@ -32,8 +34,9 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
 
-
+// Las siguientes anotaciones tienen que estar en  la clase dónde se encuentre el main()
 @Configuration // Esta clase puede tener @Bean
+// Ira en la clase principal, dónde se encuentre @Configuration
 @EnableAutoConfiguration //Spring Boot - JPA - MVC
 @ComponentScan
 // Accessing JPA Data with REST

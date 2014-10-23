@@ -1,4 +1,4 @@
-package hello;
+package com.hello.domain;
 
 //Accessing Data with JPA 
 import javax.persistence.Entity;
