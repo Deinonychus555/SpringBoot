@@ -1,0 +1,9 @@
+## YAML Template.
+
+ja:
+    property_yaml: YAML
+    
+    habitacion:
+         - salon
+         - comedor
+         - cocina

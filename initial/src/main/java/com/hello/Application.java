@@ -20,6 +20,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 // Uploading Files 
 import org.springframework.boot.context.embedded.MultipartConfigFactory;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 ////
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -36,6 +37,9 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 
 // Las siguientes anotaciones tienen que estar en  la clase dónde se encuentre el main()
 @Configuration // Esta clase puede tener @Bean
+// para indicar propiedades con .yml, esta anotacion va junto @Configuration
+//¡ejecuta dos veces el método run de myBean!
+//@EnableConfigurationProperties(myBean.class)
 // solamente aparecerá en la clase principal, dónde se encuentre @Configuration
 @EnableAutoConfiguration //Spring Boot - JPA - MVC
 @ComponentScan
@@ -80,7 +84,7 @@ public class Application {
         }
         */
         // Accessing Data with JPA
-         ConfigurableApplicationContext context = SpringApplication.run(Application.class);
+        ConfigurableApplicationContext context = SpringApplication.run(Application.class);
          
          
         System.out.println("Let's inspect the beans provided by Spring Boot:");
