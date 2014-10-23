@@ -26,13 +26,17 @@ public class myBean implements CommandLineRunner{ // Using the CommandLineRunner
 // en application.properties deberá aparecer 'propiedad='    
 @Value("${propiedad:     }") // los ':' significan que tomará por defecto valor vacío
 private String propiedad;
-    
+
+@Value("${my.secret}") // definido en application.properties
+private String aleatorio;
+
 // Using the CommandLineRunner    
 @Override
 // método de la interfaz CommandLineRunner que se ejecutará al iniciarse El SpingApplication
 public void run(String... args) { 
         
-        System.out.println("Propiedad: "+propiedad);        
+        System.out.println("Propiedad: "+propiedad);   
+        System.out.println("Valor aleatorio: "+aleatorio);
         System.out.println("Implemento la interfaz CommandLineRunner y estos son los argumentos: ");
         for (String s : args) {
             System.out.println(s);
