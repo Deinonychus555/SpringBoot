@@ -36,7 +36,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 
 // Las siguientes anotaciones tienen que estar en  la clase dónde se encuentre el main()
 @Configuration // Esta clase puede tener @Bean
-// Ira en la clase principal, dónde se encuentre @Configuration
+// solamente aparecerá en la clase principal, dónde se encuentre @Configuration
 @EnableAutoConfiguration //Spring Boot - JPA - MVC
 @ComponentScan
 // Accessing JPA Data with REST
@@ -64,11 +64,24 @@ public class Application {
          SpringApplication.run(Application.class, args);
         */
         
+        /*
+        SpringApplication app = new SpringApplication(MySpringConfiguration.class);
+        app.setShowBanner(false); // las letras SPRING que aparecen al ejecutar
+        app.run(args);
+        */
+        
         //gps-spring-boot
         //ApplicationContext cxt = SpringApplication.run(Application.class, args);
         
+        /*
+         System.out.println("Soy la clase principal y estos son los argumentos: ");
+        for (String s : args) {
+            System.out.println(s);
+        }
+        */
         // Accessing Data with JPA
          ConfigurableApplicationContext context = SpringApplication.run(Application.class);
+         
          
         System.out.println("Let's inspect the beans provided by Spring Boot:");
         

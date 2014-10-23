@@ -98,7 +98,7 @@
          <!--end: Accessing JPA Data with REST-->
         <!-- end: Accessing Data with JPA -->
         
-        <start-class>hello.Application</start-class>
+        <start-class>com.hello.Application</start-class>
     </properties>
 
     <build>
