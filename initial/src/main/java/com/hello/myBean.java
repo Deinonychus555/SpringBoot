@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Value;
 // Using the CommandLineRunner
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Profile;
 
 import org.springframework.stereotype.Component;
 
@@ -25,6 +26,8 @@ import org.springframework.stereotype.Component;
 @Component
 // Esta anotacion se refiere al archivo .yml
 @ConfigurationProperties(prefix="ja")
+// Profiles, restringe el uso de esta clase a menos que este activa en application.properties
+@Profile("myBean")
 public class myBean implements CommandLineRunner{ // Using the CommandLineRunner
     
 // Externalized Configuration   
