@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 
-@Controller
+@Controller // Se utiliza para devolver vistas ¡No funciona con @RestContoller!
 public class WebController extends WebMvcConfigurerAdapter {
 
     @Override

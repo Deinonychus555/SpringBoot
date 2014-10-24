@@ -34,6 +34,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 // MVC
 import org.springframework.ui.Model;
+//Spring Web MVC framework
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Collection;
 
@@ -41,7 +43,8 @@ import java.util.Collection;
 
 
 
-@RestController // NO devuelve vistas
+
+@RestController // Se utiliza para devolver JSON y REST, ¡NO devuelve vistas!
 public class HelloController {
     
     // JPA
@@ -103,9 +106,9 @@ public String rest() {
     @RequestMapping("/customer")
     Collection<Customer> customer(){
         
-        Collection<Customer> customer = this.customerRepository.findAll();
+        Collection<Customer> customers = this.customerRepository.findAll();
                
-        return customer;
+        return customers;
     }
     
     
@@ -129,6 +132,24 @@ public String rest() {
     @RequestMapping(value="/greeting2", method=RequestMethod.GET)
     public @ResponseBody Greeting sayHello(@RequestParam(value="name", required=false, defaultValue="Stranger") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    }
+    
+    
+    //Spring Web MVC framework
+    @RequestMapping(value="/customer/{lastName}", method=RequestMethod.GET)
+    public Collection <Customer>  getCostumer(@PathVariable String lastName) {
+        
+        Collection <Customer> customers = this.customerRepository.findByLastName(lastName);
+               
+        return customers;
+    }
+    
+    @RequestMapping(value="/booking/{name}", method=RequestMethod.GET)
+    public Collection <Booking>  getBooking(@PathVariable String name) {
+        
+        Collection <Booking> bookings = this.bookingRepository.findByBookingName(name);
+               
+        return bookings;
     }
     
     
