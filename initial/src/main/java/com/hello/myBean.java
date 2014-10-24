@@ -38,7 +38,7 @@ private String propiedad;
 @Value("${my.secret:}") // definido en application.properties
 private String secret;
 
-
+// Externalized Configuration 
 private String property_yaml; // definido en .yml
 //private List<String> habitacion; // definido en .yml
 

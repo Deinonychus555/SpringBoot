@@ -37,6 +37,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 
 // Las siguientes anotaciones tienen que estar en  la clase dónde se encuentre el main()
 @Configuration // Esta clase puede tener @Bean
+//Externalized Configuration:
 // para indicar propiedades con .yml, esta anotacion va junto @Configuration
 //¡ejecuta dos veces el método run de myBean!
 //@EnableConfigurationProperties(myBean.class)
