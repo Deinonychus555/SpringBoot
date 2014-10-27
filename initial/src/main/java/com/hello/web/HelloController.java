@@ -99,6 +99,24 @@ public String rest() {
         return books;
     }
     
+    @RequestMapping(value="/bookingName" , method=RequestMethod.GET)
+    Collection<Booking> bookingName(@RequestParam(value="name") String name ){
+                                       
+        Collection<Booking> books = this.bookingRepository.findByBookingName(name);
+               
+        return books;
+    }
+    
+    
+    @RequestMapping(value="/bookingNameId" , method=RequestMethod.GET)
+    Collection<Booking> bookingNameId(@RequestParam(value="bookingName", required = true) String bookingName, 
+                                      @RequestParam(value="id", required = true)  String id ){
+        
+        Collection<Booking> books = this.bookingRepository.findByBookName(bookingName, Long.parseLong(id));
+               
+        return books;
+    }
+    
     
     
     
@@ -111,6 +129,7 @@ public String rest() {
         return customers;
     }
     
+      
     
     
     
@@ -144,6 +163,7 @@ public String rest() {
         return customers;
     }
     
+    
     @RequestMapping(value="/booking/{name}", method=RequestMethod.GET)
     public Collection <Booking>  getBooking(@PathVariable String name) {
         
@@ -152,6 +172,6 @@ public String rest() {
         return bookings;
     }
     
-    
+   
     
 }

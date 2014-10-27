@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+
 @Entity
 public class Booking {
 
@@ -14,7 +16,7 @@ public class Booking {
     private long id;
     private String bookingName;
     
-
+    // los constructores p or defecto serán protegidos
     protected Booking() {}
 
     public Booking(String bookingName) {

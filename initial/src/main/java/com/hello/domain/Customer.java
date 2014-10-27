@@ -15,6 +15,7 @@ public class Customer {
     private String firstName;
     private String lastName;
 
+    // los constructores p or defecto serán protegidos
     protected Customer() {}
 
     public Customer(String firstName, String lastName) {

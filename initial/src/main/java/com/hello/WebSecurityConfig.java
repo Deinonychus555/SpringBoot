@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.servlet.configuration.
 // Securing a Web Application
 @EnableWebMvcSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -39,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         public void init(AuthenticationManagerBuilder auth) throws Exception {
             auth
                     .inMemoryAuthentication()
-                    .withUser("user").password("password").roles("USER");
+                    .withUser("123").password("123").roles("USER");
         }
 
     }
