@@ -14,7 +14,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 // Accessing JPA Data with REST
-@RepositoryRestResource(collectionResourceRel = "customers", path = "customers")
+@RepositoryRestResource(collectionResourceRel = "customerRest", path = "customerRest")
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     List<Customer> findByLastName(@Param("lastName")String lastName);

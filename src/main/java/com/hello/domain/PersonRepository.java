@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 // Accessing JPA Data with REST
-@RepositoryRestResource(collectionResourceRel = "people", path = "people")
+@RepositoryRestResource(collectionResourceRel = "personRest", path = "personRest")
 public interface PersonRepository extends PagingAndSortingRepository<Person, Long> {
 
 	List<Person> findByLastName(@Param("name") String name);

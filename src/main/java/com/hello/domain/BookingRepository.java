@@ -12,7 +12,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 // Accessing JPA Data with REST
-@RepositoryRestResource(collectionResourceRel = "books", path = "books")
+@RepositoryRestResource(collectionResourceRel = "bookingRest", path = "bookingRest")
 public interface BookingRepository extends JpaRepository<Booking, Long> {
 
     Collection<Booking> findByBookingName(@Param("bookingName")String bookingName);
