@@ -110,14 +110,17 @@ public String rest() {
     
     @RequestMapping(value="/bookingNameId" , method=RequestMethod.GET)
     Collection<Booking> bookingNameId(@RequestParam(value="bookingName", required = true) String bookingName, 
-                                      @RequestParam(value="id", required = true)  String id ){
+                                      @RequestParam(value="id", required = true)  Long id ){
         
-        Collection<Booking> books = this.bookingRepository.findByBookName(bookingName, Long.parseLong(id));
+        Collection<Booking> books = this.bookingRepository.findByBookName(bookingName, id);
                
         return books;
     }
     
-    
+    @RequestMapping(value="/bookingIds" , method=RequestMethod.GET)// ".../bookingIds?ids=1,2,3"
+    public Collection<Booking> getUsers(@RequestParam("ids") Collection<Long> ids) {
+        return this.bookingRepository.findAll(ids);
+    }
     
     
     // Accessing Data with JPA
