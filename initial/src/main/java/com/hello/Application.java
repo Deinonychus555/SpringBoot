@@ -48,7 +48,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 @EnableJpaRepositories
 @Import(RepositoryRestMvcConfiguration.class)
 // end: Accessing JPA Data with REST
-
+//@EnableGlobalMethodSecurity
 public class Application {
     
     /* Nota: Los @Bean (configuraciones con 'factorías'), deben estar 
@@ -62,7 +62,7 @@ public class Application {
         factory.setMaxRequestSize("128KB");
         return factory.createMultipartConfig();
     }
-    
+        
     public static void main(String[] args) {
         /*
         //si no queremos hacer nada:

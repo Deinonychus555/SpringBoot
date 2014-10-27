@@ -1,4 +1,4 @@
-package com.hello;
+package com.hello.domain;
 
 public class Greeting {
 
